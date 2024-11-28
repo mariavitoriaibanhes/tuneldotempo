@@ -1,193 +1,149 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
-
-:root {
-    --bg-color: #550000;
-    --primary-color: #c01010;
-    --secondary-color: #b44646;
-    --secondar-color: #f1c1c1;
-    --font: “Nunito Sans”, sans-serif;
-}
-
-*{
-    padding: 0;
+/* Reset de estilo padrão do navegador */
+* {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
-}
-
-.menu-h ul{
-    width: 100%;
-    height: 80px;
-    background-color: var(--bg-color);
-    font-family: var(--font);
-    position: fixed;
-    padding: 0 32%;
+  }
   
-    
-}
-
-.menu-h ul li{
-    display: inline;
-    width:200px;
-    float: center;  
-}
-
-.menu-h ul li a{
-    color: var(--secondar-color);
-    padding: 40px;
-    display: inline-block;
-    text-decoration: none;
-    transition: background ,4s; 
-    text-align: center; 
-}
-
-.menu-h ul li a:hover{
-    background-color: var(--secondary-color);   
-}
-
-
-/*container*/
-.imagem{
-    width: 100%;
-    height: 500px;
+  /* Estilo geral do body */
+  body {
+    font-family: 'Arial', sans-serif;
+    background: #f0f0f0;
+    color: #8e0ed8;
+    line-height: 1.6;
+    padding: 20px;
+  }
+  
+  /* Estilo do header */
+  header {
     text-align: center;
-    padding: 40px 4%;
-    color: #490000;
-
+    padding: 40px 20px;
+    background: #370157;
+    color: white;  
+    border-radius: 10px;
+    margin-bottom: 30px;
+  }
+  
+  header h1 {
+    font-size: 3em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  
+  header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+  }
+  
+  /* Estilo da linha do tempo */
+  .timeline {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+  }
+  
+  /* Caixa de cada ano */
+  .year-box {
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo branco transparente para que a imagem apareça */
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
     background-position: center;
-    background-size: cover;/*significa que a imagem de fundo sempre se ajustará a toda a div*/
-    background-repeat: no-repeat;/**/
-    background-attachment: fixed;/**/
-}
-
-.secundario__imagem {
-    width: 100px;
-    height: 50px;
-    padding: 0 24px;
-    transition: .4s all ease-in-out;
-}
-
-.texto:hover img{
-    transform: scale(1.8);
-}
-
-.texto{
+    background-size: cover;
+    height: 350px; /* Ajuste a altura de acordo com o conteúdo */
+  }
+  
+  /* Efeito de hover nas caixas */
+  .year-box:hover {
+    transform: translateY(-10px);
+  }
+  
+  /* Adicionar imagens de fundo nos anos */
+  #year2022 {
+    background-image: url('2022mavi.jpeg'); /* Caminho correto para a imagem .jpeg */
+    background-size: cover;
     width: 100%;
-    height: 250px;
+    height: 100px;
+}
+
+#year2023 {
+    background-image: url('2023mavi.jpeg'); /* Caminho correto para a imagem .jpeg */
+    background-size: cover;
+    width: 100%;
+    height: 100px;
+}
+
+#year2024 {
+    background-image: url('2024mavi.jpeg'); /* Caminho correto para a imagem .jpeg */
+    background-size: cover;
+    width: 100%;
+    height: 100px;
+}
+
+.imagem-quadrada {
+    width: 100px;        /* Define a largura da imagem */
+    height: 100px;       /* Define a altura da imagem */
+    object-fit: cover;   /* Garante que a imagem cubra o tamanho definido, cortando partes se necessário */
+  }
+  
+  .year-box h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #370157;
+    text-transform: uppercase;
+  }
+  
+  .year-box p {
+    font-size: 1.1em;
+    color: #8e0ed8;
+  }
+  
+  /* Links */
+  .more-info {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #370157;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+  }
+  
+  .more-info:hover {
+    background-color: #370157; /* Cor de hover */
+  }
+  
+  /* Efeito de transição de entrada */
+  @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+  
+  body {
+    animation: fadeIn 1s ease-out;
+  }
+  
+  /* Estilo do footer */
+  footer {
     text-align: center;
-    padding: 40px 4%;
-    font-family: roboto;
-    font-size: 24px;
-    color: #490000;
-}
-.texto__principal{/**/
-    width: 100%;/*largura*/
-    height: 100px;/*altura*/
-    text-align: center;/*alinhamento do texto*/
-    padding: 60px 4%;/*espaçamento interno*/
-    font-family: roboto;/*tipo da fonte*/
-    font-size: 24px;/*tamanho da fonte*/
-    color: #490000;/*cor da fonte*/
-}
-h1{
-    margin-bottom: 20px;/* define a margin area na parte inferior de um elemento*/
-
-}
-
-section:nth-of-type(2){/*pseudo-classe CSS selecionam itens de um grupo de elementos HTML*/
-    background-image: url("download\ \(8\).jfif");/*imagem de fundo*/
-}
-section:nth-of-type(4){
-    background-image: url("download\ \(8\).jfif");
-}
-section:nth-of-type(6){
-    background-image: url("download\ \(8\).jfif");
-}
-
-
-
-/*para colocar o efeito na borda*/
-.caixa {
-    margin: auto;
-     position: relative;
-     width: 50px;
-     height: 20px;
-     color: #490000;
-     background: var(--secondar-color);
-     display: flex;
-    justify-content: center;
-     align-items: center;
-     border-radius: 3px;
-     font-weight: 700;
- }
- 
- .caixa::before, .caixa::after {
-     content: '';
-     position: absolute;
-     z-index: -1;
-     width: calc(100% + 5px);
-     height: calc(100% + 5px);
-     background: linear-gradient(45deg, #800000, #8b0000, #b22020, 
-     #9f8383, #d14848, #b22020, #8b0000, #800000);
-     background-size: 300%;
-     background-repeat: no-repeat;
-     background-position: 100%;
-     border-radius: 10px;
-     animation: AnimarBorda 4s linear infinite;
-     
- }
- 
- @keyframes AnimarBorda {
-     0% {
-         background-position: 0;
-     }
-     100% {
-         background-position: 300%;
-     }
- }
- .caixa::after {
-     filter: blur(5px);
- }
- 
- .caixa {
-     margin: auto;
-      position: relative;
-      width: 50px;
-      height: 20px;
-      color: #490000;
-      background: #fff;
-      display: flex;
-     justify-content: center;
-      align-items: center;
-      border-radius: 3px;
-      font-weight: 700;
+    padding: 20px;
+    background: #370157;
+    color: white;
+    border-radius: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
   }
-  
-  .caixa::before, .caixa::after {
-      content: '';
-      position: absolute;
-      z-index: -1;
-      width: calc(100% + 5px);
-      height: calc(100% + 5px);
-      background: linear-gradient(45deg, #128686, #8d1313, #646364, 
-      #839a9f, #d7d8d8, #881111, #939292, #b91bb9);
-      background-size: 300%;
-      background-repeat: no-repeat;
-      background-position: 100%;
-      border-radius: 10px;
-      animation: AnimarBorda 4s linear infinite;
-      
-  }
-  
-  @keyframes AnimarBorda {
-      0% {
-          background-position: 0;
-      }
-      100% {
-          background-position: 300%;
-      }
-  }
-  .caixa::after {
-      filter: blur(5px);
-  }
-  
-  
